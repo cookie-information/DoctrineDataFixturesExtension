@@ -33,7 +33,7 @@ return function (ContainerConfigurator $container) {
         ->tag('event_dispatcher.subscriber');
     $container->set(FixtureService::class)
         ->args([
-            ref('symfony2_extension.kernel'),
+            ref('fob_symfony.kernel'),
             '%behat.doctrine_data_fixtures.fixtures%',
             '%behat.doctrine_data_fixtures.directories%',
         ]);
