@@ -17,19 +17,22 @@
         }
     ],
     "require": {
-        "php": "^7.1 | ^8.0",
-        "behat/behat": "^3.0",
-        "behat/symfony2-extension": "^2.0",
-        "doctrine/data-fixtures": "^1.0",
+        "php": "^8.0",
+        "behat/behat": "^3.4",
+        "friends-of-behat/symfony-extension": "^2.4",
+        "doctrine/data-fixtures": "^1.6",
         "doctrine/orm": "^2.6",
         "symfony/dependency-injection": "^3.4|^4.0"
     },
     "require-dev": {
-        "doctrine/doctrine-bundle": "^1.8",
+        "doctrine/doctrine-bundle": "^2.0",
         "doctrine/doctrine-fixtures-bundle": "^3.0",
         "symfony/process": "^3.4|^4.0",
         "adamquaile/behat-command-runner-extension": "^0.1.1",
-        "symfony/var-dumper": "^3.4|^4.0"
+        "symfony/var-dumper": "5.4.*"
+    },
+    "scripts": {
+        "test": "../vendor/bin/behat --strict"
     },
     "suggest": {
         "doctrine/migrations": "Uses DBAL to load versioned database schema and migration classes",

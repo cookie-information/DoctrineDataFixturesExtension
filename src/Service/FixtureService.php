@@ -18,11 +18,12 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
 use Doctrine\Common\DataFixtures\ProxyReferenceRepository;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
-use Doctrine\Persistence\Event\LifecycleEventArgs;
+use Doctrine\ORM\Event\PostPersistEventArgs;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\SchemaTool;
+use stdClass;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\HttpKernel\Kernel;
 
@@ -158,7 +159,7 @@ class FixtureService
 
     private function dispatchEvent(EntityManager $em, string $event): void
     {
-        $eventArgs = new LifecycleEventArgs(null, $em);
+        $eventArgs = new PostPersistEventArgs(new StdClass, $em);
 
         $em->getEventManager()->dispatchEvent($event, $eventArgs);
     }

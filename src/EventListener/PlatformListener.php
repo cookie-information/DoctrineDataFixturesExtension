@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace BehatExtension\DoctrineDataFixturesExtension\EventListener;
 
 use Doctrine\Common\EventSubscriber;
-use Doctrine\Persistence\Event\LifecycleEventArgs;
+use Doctrine\ORM\Event\PostPersistEventArgs;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -36,7 +36,7 @@ class PlatformListener implements EventSubscriber
     /**
      * Pre-truncate.
      */
-    public function preTruncate(LifecycleEventArgs $args): void
+    public function preTruncate(PostPersistEventArgs $args): void
     {
         $objectManager = $args->getObjectManager();
         if (!$objectManager instanceof EntityManagerInterface) {
@@ -54,7 +54,7 @@ class PlatformListener implements EventSubscriber
     /**
      * Post-truncate.
      */
-    public function postTruncate(LifecycleEventArgs $args): void
+    public function postTruncate(PostPersistEventArgs $args): void
     {
         $objectManager = $args->getObjectManager();
         if (!$objectManager instanceof EntityManagerInterface) {

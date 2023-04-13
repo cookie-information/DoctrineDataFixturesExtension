@@ -11,13 +11,13 @@ declare(strict_types=1);
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace BehatExtension\DoctrineDataFixturesExtension\Tests\DemoBundle\Features\Context;
+namespace BehatExtension\DoctrineDataFixturesExtension\Tests\DemoBundle\Features\bootstrap;
 
-use Behat\Symfony2Extension\Context\KernelAwareContext;
+use Behat\Behat\Context\Context;
 use BehatExtension\DoctrineDataFixturesExtension\Tests\DemoBundle\Entity\ProductManager;
 use Symfony\Component\HttpKernel\KernelInterface;
 
-class FixtureContext implements KernelAwareContext
+class FixtureContext implements Context
 {
     /**
      * @var KernelInterface
