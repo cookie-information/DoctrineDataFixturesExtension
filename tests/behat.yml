@@ -3,12 +3,16 @@ default:
         progress:
             paths: false
     extensions:
+        Behat\MinkExtension:
+            sessions:
+                symfony:
+                    symfony: ~
         AdamQuaile\Behat\CommandRunnerExtension:
             afterSuite:
             - rm -rf ./app/cache
             - rm -rf ./app/logs
             - rm ./app/sqlite.db.cache
-        Behat\Symfony2Extension: ~
+        FriendsOfBehat\SymfonyExtension: ~
         BehatExtension\DoctrineDataFixturesExtension\Extension:
             lifetime: 'scenario'
             use_backup: true
@@ -18,7 +22,7 @@ default:
                 - './Dummy/Fixtures'
     suites:
         fixtures:
-            type: 'symfony_bundle'
-            bundle: 'DemoBundle'
+            paths:
+                - '%paths.base%/DemoBundle'
             contexts:
-                - 'BehatExtension\DoctrineDataFixturesExtension\Tests\DemoBundle\Features\Context\FixtureContext'
+                - BehatExtension\DoctrineDataFixturesExtension\Tests\DemoBundle\Features\bootstrap\FixtureContext: ~
