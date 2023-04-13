@@ -20,9 +20,12 @@
         "php": "^8.0",
         "behat/behat": "^3.4",
         "friends-of-behat/symfony-extension": "^2.4",
+        "friends-of-behat/mink": "^1.10",
         "doctrine/data-fixtures": "^1.6",
         "doctrine/orm": "^2.6",
-        "symfony/dependency-injection": "^3.4|^4.0"
+        "symfony/dependency-injection": "^3.4|^4.0",
+        "friends-of-behat/mink-extension": "^2.7",
+        "friends-of-behat/mink-browserkit-driver": "^1.6"
     },
     "require-dev": {
         "doctrine/doctrine-bundle": "^2.0",
