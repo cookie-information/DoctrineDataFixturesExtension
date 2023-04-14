@@ -23,7 +23,7 @@
         "friends-of-behat/mink": "^1.10",
         "doctrine/data-fixtures": "^1.6",
         "doctrine/orm": "^2.6",
-        "symfony/dependency-injection": "^3.4|^4.0",
+        "symfony/dependency-injection": "5.4.22",
         "friends-of-behat/mink-extension": "^2.7",
         "friends-of-behat/mink-browserkit-driver": "^1.6"
     },
