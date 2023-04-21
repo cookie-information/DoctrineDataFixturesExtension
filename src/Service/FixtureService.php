@@ -373,10 +373,8 @@ class FixtureService
 
         $this->referenceRepository = null;
 
-        $cacheDriver = $em->getMetadataFactory()->getCacheDriver();
+        $cacheDriver = $em->getConfiguration()->getMetadataCache();
 
-        if ($cacheDriver) {
-            $cacheDriver->deleteAll();
-        }
+        $cacheDriver?->clear();
     }
 }
