@@ -24,7 +24,7 @@ final class BehatDoctrineDataFixturesExtension extends Extension
         $container->setAlias('doctrine.fixtures.loader.alias', new Alias('doctrine.fixtures.loader', true));
     }
 
-    public function getAlias()
+    public function getAlias(): string
     {
         return 'behat_doctrine_data_fixtures_extension';
     }

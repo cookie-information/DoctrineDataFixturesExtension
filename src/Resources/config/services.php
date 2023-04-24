@@ -15,7 +15,7 @@ use BehatExtension\DoctrineDataFixturesExtension\Context\Initializer\FixtureServ
 use BehatExtension\DoctrineDataFixturesExtension\EventListener\HookListener;
 use BehatExtension\DoctrineDataFixturesExtension\Service\FixtureService;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
+use Symfony\Component\DependencyInjection\Reference;
 
 return function (ContainerConfigurator $container) {
     $container = $container->services()->defaults()
@@ -28,18 +28,18 @@ return function (ContainerConfigurator $container) {
             '%behat.doctrine_data_fixtures.lifetime%',
         ])
         ->call('setFixtureService', [
-            ref(FixtureService::class),
+            new Reference(FixtureService::class),
         ])
         ->tag('event_dispatcher.subscriber');
     $container->set(FixtureService::class)
         ->args([
-            ref('fob_symfony.kernel'),
+            new Reference('fob_symfony.kernel'),
             '%behat.doctrine_data_fixtures.fixtures%',
             '%behat.doctrine_data_fixtures.directories%',
         ]);
     $container->set(FixtureServiceAwareInitializer::class)
         ->args([
-            ref(FixtureService::class),
+            new Reference(FixtureService::class),
         ])
         ->tag('context.initializer');
 };

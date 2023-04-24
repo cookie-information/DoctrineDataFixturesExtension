@@ -47,7 +47,7 @@ final class Extension implements ExtensionInterface
                 ->booleanNode('autoload')
                     ->info('When true, the extension will load the data fixtures for all registered bundles')
                     ->defaultFalse()
-                    ->setDeprecated('This option has no effect anymore. For each bundle, please declare your fixtures as services and tagged with "doctrine.fixture.orm".')
+                    ->setDeprecated('This option has no effect anymore. For each bundle, please declare your fixtures as services and tagged with "doctrine.fixture.orm".', 'whatever')
                 ->end()
                 ->booleanNode('use_backup')
                     ->info('When true, the extension will backup the database and restore it when needed')

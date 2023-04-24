@@ -17,7 +17,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 final class BehatDoctrineDataFixturesExtensionBundle extends Bundle
 {
-    public function getContainerExtensionClass()
+    public function getContainerExtensionClass(): string
     {
         return BehatDoctrineDataFixturesExtension::class;
     }

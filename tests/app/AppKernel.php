@@ -19,7 +19,7 @@ final class AppKernel extends Kernel
     /**
      * {@inheritdoc}
      */
-    public function registerBundles()
+    public function registerBundles(): iterable
     {
         $bundles = [
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
