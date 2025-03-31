@@ -1,5 +1,5 @@
 {
-    "name": "awojakowski/doctrine-data-fixtures-extension",
+    "name": "cookieinformation/doctrine-data-fixtures-extension",
     "type": "library",
     "description": "Doctrine data fixtures extension for Behat",
     "keywords": ["behat", "bdd", "doctrine", "data fixtures"],
