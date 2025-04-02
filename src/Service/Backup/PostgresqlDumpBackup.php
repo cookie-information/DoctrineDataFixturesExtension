@@ -57,7 +57,7 @@ final class PostgresqlDumpBackup implements BackupInterface
         }
 
         if (isset($params['port'])) {
-            $options .= sprintf(' --port=%s', escapeshellarg($params['port']));
+            $options .= sprintf(' --port=%s', escapeshellarg((string)$params['port']));
         }
 
         $command = sprintf(
