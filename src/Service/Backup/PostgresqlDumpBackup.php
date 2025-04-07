@@ -33,7 +33,7 @@ final class PostgresqlDumpBackup implements BackupInterface
 
     private function runCommand(string $command): ?int
     {
-        $process = new Process($command);
+        $process = Process::fromShellCommandline($command);
 
         $process->run();
 
@@ -57,7 +57,7 @@ final class PostgresqlDumpBackup implements BackupInterface
         }
 
         if (isset($params['port'])) {
-            $options .= sprintf(' --port=%s', escapeshellarg($params['port']));
+            $options .= sprintf(' --port=%s', escapeshellarg((string)$params['port']));
         }
 
         $command = sprintf(
