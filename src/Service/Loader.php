@@ -27,7 +27,7 @@ class Loader extends BaseLoader
         $this->container = $container;
     }
 
-    public function addFixture(FixtureInterface $fixture)
+    public function addFixture(FixtureInterface $fixture): void
     {
         if ($fixture instanceof ContainerAwareInterface) {
             $fixture->setContainer($this->container);
