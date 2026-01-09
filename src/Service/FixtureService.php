@@ -67,6 +67,11 @@ class FixtureService
      */
     private $directories;
 
+    /**
+     * @var string[]
+     */
+    private $fixtures;
+
     public function __construct(Kernel $kernel, array $classnames, array $directories)
     {
         $this->kernel = $kernel;
