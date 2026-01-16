@@ -34,43 +34,26 @@ use Symfony\Component\HttpKernel\Kernel;
  */
 class FixtureService
 {
-    private $loader;
+    private Loader $loader;
 
-    private $kernel;
+    private Kernel $kernel;
 
-    /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
+    private EntityManagerInterface $entityManager;
 
-    /**
-     * @var PlatformListener
-     */
-    private $listener;
+    private PlatformListener $listener;
 
-    /**
-     * @var null|BackupService
-     */
-    private $backupService;
+    private ?BackupService $backupService = null;
 
-    /**
-     * @var null|ProxyReferenceRepository
-     */
-    private $referenceRepository;
+    private ?ProxyReferenceRepository $referenceRepository = null;
 
-    /**
-     * @var string[]
-     */
-    private $classnames;
-    /**
-     * @var string[]
-     */
-    private $directories;
+    /** @var string[] */
+    private array $classnames = [];
 
-    /**
-     * @var string[]
-     */
-    private $fixtures;
+    /** @var string[] */
+    private array $directories = [];
+
+    /** @var object[] */
+    private array $fixtures = [];
 
     public function __construct(Kernel $kernel, array $classnames, array $directories)
     {
